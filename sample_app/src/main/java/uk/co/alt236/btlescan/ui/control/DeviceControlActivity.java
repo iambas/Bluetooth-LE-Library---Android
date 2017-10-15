@@ -138,6 +138,7 @@ public class DeviceControlActivity extends AppCompatActivity {
             if (BluetoothLeService.ACTION_GATT_CONNECTED.equals(action)) {
                 updateConnectionState(State.CONNECTED);
                 invalidateOptionsMenu();
+                startActivity(new Intent(DeviceControlActivity.this, YoutubeActivity.class));
             } else if (BluetoothLeService.ACTION_GATT_DISCONNECTED.equals(action)) {
                 clearUI();
                 updateConnectionState(State.DISCONNECTED);
@@ -310,7 +311,6 @@ public class DeviceControlActivity extends AppCompatActivity {
                     case CONNECTED:
                         colourId = android.R.color.holo_green_dark;
                         resId = R.string.connected;
-                        startActivity(new Intent(DeviceControlActivity.this, YoutubeActivity.class));
                         break;
                     case DISCONNECTED:
                         colourId = android.R.color.holo_red_dark;
