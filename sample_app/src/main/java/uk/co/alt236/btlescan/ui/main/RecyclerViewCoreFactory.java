@@ -20,5 +20,4 @@ import uk.co.alt236.btlescan.ui.main.recyclerview.holder.LeDeviceHolder;
 
         return core;
     }
-
 }

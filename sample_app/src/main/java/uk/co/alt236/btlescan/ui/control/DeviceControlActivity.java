@@ -45,6 +45,7 @@ import uk.co.alt236.bluetoothlelib.resolvers.GattAttributeResolver;
 import uk.co.alt236.bluetoothlelib.util.ByteUtils;
 import uk.co.alt236.btlescan.R;
 import uk.co.alt236.btlescan.services.BluetoothLeService;
+import uk.co.alt236.btlescan.youtube.YoutubeActivity;
 
 /**
  * For a given BLE device, this Activity provides the user interface to connect, display data,
@@ -309,6 +310,7 @@ public class DeviceControlActivity extends AppCompatActivity {
                     case CONNECTED:
                         colourId = android.R.color.holo_green_dark;
                         resId = R.string.connected;
+                        startActivity(new Intent(DeviceControlActivity.this, YoutubeActivity.class));
                         break;
                     case DISCONNECTED:
                         colourId = android.R.color.holo_red_dark;
